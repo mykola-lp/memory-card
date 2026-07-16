@@ -1,11 +1,17 @@
+import Header from './components/Header/Header';
+import Scoreboard from './components/Scoreboard/Scoreboard';
+import CardGrid from './components/CardGrid/CardGrid';
+
 import './index.css'
 
 function App() {
   return (
     <>
-      <h1>Memory Card Game</h1>
+      <Header />
+      <Scoreboard />
+      <CardGrid />
     </>
   );
 }
 
-export default App
+export default App;
