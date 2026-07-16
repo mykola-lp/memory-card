@@ -1,12 +1,13 @@
-function Card() {
+function Card({ pokemon }) {
   return (
     <article>
       <img
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-        alt="Pikachu"
+        src={pokemon.image}
+        alt={pokemon.name}
+        width="180"
       />
 
-      <h3>Pikachu</h3>
+      <h3>{pokemon.name}</h3>
     </article>
   );
 }

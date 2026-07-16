@@ -1,9 +1,11 @@
 import Card from '../Card/Card';
 
-function CardGrid() {
+function CardGrid({ pokemons }) {
   return (
     <section>
-      <Card />
+      {pokemons.map((pokemon) => (
+        <Card key={pokemon.id} pokemon={pokemon} />
+      ))}
     </section>
   );
 }
