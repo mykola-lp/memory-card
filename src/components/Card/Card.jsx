@@ -1,6 +1,6 @@
-function Card({ pokemon }) {
+function Card({ pokemon, onClick }) {
   return (
-    <article>
+    <article onClick={() => onClick(pokemon.id)}>
       <img
         src={pokemon.image}
         alt={pokemon.name}

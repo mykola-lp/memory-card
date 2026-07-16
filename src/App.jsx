@@ -10,6 +10,9 @@ import './index.css'
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+  const [clickedCards, setClickedCards] = useState([]);
 
   useEffect(() => {
     async function loadPokemons() {
@@ -20,11 +23,28 @@ function App() {
     loadPokemons();
   }, []);
 
+  function handleCardClick(id) {
+    if (clickedCards.includes(id)) {
+      setBestScore((currentBest) => Math.max(currentBest, score));
+      setScore(0);
+      setClickedCards([]);
+      return;
+    }
+
+    setClickedCards((prev) => [...prev, id]);
+    setScore((prev) => prev + 1);
+  }
+
   return (
     <>
       <Header />
-      <Scoreboard />
-      <CardGrid pokemons={pokemons} />
+
+      <Scoreboard score={score} bestScore={bestScore} />
+
+      <CardGrid
+        pokemons={pokemons}
+        onCardClick={handleCardClick}
+      />
     </>
   );
 }
