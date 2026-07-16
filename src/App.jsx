@@ -5,6 +5,7 @@ import Scoreboard from './components/Scoreboard/Scoreboard';
 import CardGrid from './components/CardGrid/CardGrid';
 
 import { getPokemons } from './services/pokemonApi';
+import { shuffle } from './utils/shuffle';
 
 import './index.css'
 
@@ -17,7 +18,8 @@ function App() {
   useEffect(() => {
     async function loadPokemons() {
       const data = await getPokemons();
-      setPokemons(data);
+
+      setPokemons(shuffle(data));
     }
 
     loadPokemons();
@@ -28,11 +30,13 @@ function App() {
       setBestScore((currentBest) => Math.max(currentBest, score));
       setScore(0);
       setClickedCards([]);
+      setPokemons((prev) => shuffle(prev));
       return;
     }
 
     setClickedCards((prev) => [...prev, id]);
     setScore((prev) => prev + 1);
+    setPokemons((prev) => shuffle(prev));
   }
 
   return (
