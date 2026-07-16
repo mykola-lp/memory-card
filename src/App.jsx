@@ -1,9 +1,11 @@
-import './App.css'
+import './index.css'
 
 function App() {
   return (
-    <h1>Get started</h1>
-  )
+    <>
+      <h1>Memory Card Game</h1>
+    </>
+  );
 }
 
 export default App
