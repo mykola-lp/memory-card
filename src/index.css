@@ -5,6 +5,79 @@
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Layout */
+
+.container {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Header */
+
+.header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #555;
+}
+
+/* Scoreboard */
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+/* Card */
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1rem;
+}
+
+.card h3 {
+  text-transform: capitalize;
+}
+
+/* card grid */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }

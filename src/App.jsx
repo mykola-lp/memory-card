@@ -73,7 +73,7 @@ function App() {
   }
 
   return (
-    <>
+    <main className="container">
       <Header />
 
       <Scoreboard score={score} bestScore={bestScore} />
@@ -82,7 +82,7 @@ function App() {
         pokemons={pokemons}
         onCardClick={handleCardClick}
       />
-    </>
+    </main>
   );
 }
 

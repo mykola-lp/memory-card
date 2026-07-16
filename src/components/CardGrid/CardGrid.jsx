@@ -2,7 +2,7 @@ import Card from '../Card/Card';
 
 function CardGrid({ pokemons, onCardClick }) {
   return (
-    <section>
+    <section className="card-grid">
       {pokemons.map((pokemon) => (
         <Card
           key={pokemon.id}
