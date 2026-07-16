@@ -43,6 +43,22 @@ function App() {
       return;
     }
 
+    const newScore = score + 1;
+
+    if (newScore > bestScore) {
+      setBestScore(newScore);
+    }
+
+    if (newScore === pokemons.length) {
+      alert('🎉 You win!');
+
+      setScore(0);
+      setClickedCards([]);
+      setPokemons((prev) => shuffle(prev));
+
+      return;
+    }
+
     setClickedCards((prev) => [...prev, id]);
     setScore((prev) => prev + 1);
     setPokemons((prev) => shuffle(prev));
