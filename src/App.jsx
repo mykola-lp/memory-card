@@ -15,11 +15,20 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
   useEffect(() => {
     async function loadPokemons() {
-      const data = await getPokemons();
+      try {
+        const data = await getPokemons();
 
-      setPokemons(shuffle(data));
+        setPokemons(shuffle(data));
+      } catch {
+        setError('Failed to load Pokémon.');
+      } finally {
+        setLoading(false);
+      }
     }
 
     loadPokemons();
@@ -27,7 +36,7 @@ function App() {
 
   function handleCardClick(id) {
     if (clickedCards.includes(id)) {
-      setBestScore((currentBest) => Math.max(currentBest, score));
+      setBestScore((current) => Math.max(current, score));
       setScore(0);
       setClickedCards([]);
       setPokemons((prev) => shuffle(prev));
@@ -37,6 +46,14 @@ function App() {
     setClickedCards((prev) => [...prev, id]);
     setScore((prev) => prev + 1);
     setPokemons((prev) => shuffle(prev));
+  }
+
+  if (loading) {
+    return <h2>Loading Pokémon...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
   }
 
   return (
