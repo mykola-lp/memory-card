@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches snapshot 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <h1>
+      Memory Card Game
+    </h1>
+    <p>
+      Don't click the same Pokémon twice!
+    </p>
+  </header>
+</div>
+`;
