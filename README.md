@@ -1,4 +1,4 @@
-# Project: CV Application
+# Project: Memory Card
 
 ## Introduction
 
