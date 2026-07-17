@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import Card from './Card';
 
 test('calls onClick with pokemon id when clicked', async () => {
