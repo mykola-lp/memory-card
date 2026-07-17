@@ -9,6 +9,7 @@
     "test": "vitest",
     "lint": "eslint .",
     "format": "prettier . --write",
+    "format:check": "prettier . --check",
     "preview": "vite preview --port 8080"
   },
   "dependencies": {

@@ -14,7 +14,7 @@ export async function getPokemons(limit = 12) {
         name: details.name,
         image: details.sprites.other['official-artwork'].front_default,
       };
-    })
+    }),
   );
 
   return pokemonDetails;

@@ -7,7 +7,7 @@ import CardGrid from './components/CardGrid/CardGrid';
 import { getPokemons } from './services/pokemonApi';
 import { shuffle } from './utils/shuffle';
 
-import './index.css'
+import './index.css';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -78,10 +78,7 @@ function App() {
 
       <Scoreboard score={score} bestScore={bestScore} />
 
-      <CardGrid
-        pokemons={pokemons}
-        onCardClick={handleCardClick}
-      />
+      <CardGrid pokemons={pokemons} onCardClick={handleCardClick} />
     </main>
   );
 }
