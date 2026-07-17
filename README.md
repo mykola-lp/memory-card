@@ -36,6 +36,12 @@ Preview the production build:
 npm run preview
 ```
 
+Run tests:
+
+```bash
+npm run test
+```
+
 ## Assignment
 
 1. Create a new React Project.
@@ -53,3 +59,13 @@ npm run preview
 **Note**
 
 This project is deployed using GitHub Pages with a GitHub Actions workflow (`deploy.yml`) that automates the build and deployment process.
+
+## Testing
+
+Beyond the original assignment requirements, this project also includes tests using **Vitest** and **React Testing Library** to demonstrate three testing approaches:
+
+- **Component test** — verifies a component renders correctly with given props (`Scoreboard.test.jsx`).
+- **Event test** — simulates user interaction (clicks) and checks the resulting behavior (`Card.test.jsx`, `CardGrid.test.jsx`).
+- **Snapshot test** — captures a component's rendered output and detects unintended changes over time (`Header.test.jsx`).
+
+Tests run automatically in the CI pipeline before every deployment.
